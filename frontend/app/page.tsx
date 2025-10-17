@@ -67,30 +67,47 @@ export default function Home() {
         </div>
 
         {/* Middle Section - Image Preview */}
-        {imagePreview && (
-          <div className="flex-1 w-full max-w-md flex justify-center">
+        <div className="flex-1 w-full max-w-md flex justify-center">
+          {imagePreview ? (
             <img
               src={imagePreview}
               alt="Preview"
               className="rounded-lg shadow-md max-h-72 object-contain border border-gray-200 dark:border-gray-700"
             />
-          </div>
-        )}
+          ) : (
+            <div className="w-full h-48 rounded-lg border-2 border-dashed border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 flex flex-col items-center justify-center text-center p-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-gray-300 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h10a4 4 0 004-4v-3a4 4 0 00-4-4H7a4 4 0 00-4 4v3z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 10l2-2 3 3 4-4 3 3" />
+              </svg>
+              <p className="text-sm text-gray-500 dark:text-gray-400">No image selected</p>
+              <p className="text-xs text-gray-400 mt-1">Upload an image to see a preview</p>
+            </div>
+          )}
+        </div>
 
         {/* Right Section - Prediction Result */}
-        {result && (
-          <div className="flex-1 w-full max-w-sm bg-gray-50 dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-inner">
-            <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
-              Prediction Result
-            </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-1">
-              <span className="font-medium">Class:</span> {result.class}
-            </p>
-            <p className="text-gray-700 dark:text-gray-300">
-              <span className="font-medium">Confidence:</span> {(result.confidence * 100).toFixed(2)}%
-            </p>
-          </div>
-        )}
+        <div className="flex-1 w-full max-w-sm">
+          {result ? (
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-inner">
+              <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                Prediction Result
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-1">
+                <span className="font-medium">Class:</span> {result.class}
+              </p>
+              <p className="text-gray-700 dark:text-gray-300">
+                <span className="font-medium">Confidence:</span> {(result.confidence * 100).toFixed(2)}%
+              </p>
+            </div>
+          ) : (
+            <div className="h-48 bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-100 dark:border-gray-800 flex flex-col items-start justify-center text-gray-500">
+              <h3 className="text-lg font-medium text-gray-700 dark:text-gray-200 mb-1">Prediction Result</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">No prediction yet</p>
+              <p className="text-xs text-gray-400 mt-2">After you upload and predict an image, results will appear here.</p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
