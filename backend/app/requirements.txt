@@ -1,0 +1,11 @@
+# Backend requirements for VisionGuard
+# Notes:
+# - tensorflow can be large; if you want the CPU-only wheel use `pip install tensorflow-cpu` or adjust the spec accordingly.
+# - uvicorn[standard] provides recommended extras for production/dev server features.
+
+fastapi>=0.95,<1.0
+uvicorn[standard]>=0.22,<1.0
+tensorflow>=2.10,<3.0
+numpy>=1.24,<2.0
+pillow>=9.0,<11.0
+python-multipart>=0.0.5
