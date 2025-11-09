@@ -166,8 +166,7 @@ export default function Home() {
                 Prediction Result
               </h2>
               <div className="space-y-4">
-                <div className="bg-gradient-to-r from-indigo-100 to-blue-100 dark:from-indigo-900/30 dark:to-blue-900/30 border border-indigo-300 dark:border-indigo-700 rounded-lg p-4">
-                  <p className="text-xs text-indigo-600 dark:text-indigo-300 font-semibold uppercase tracking-wide mb-1">Detected Class</p>
+                <div>
                   <p className="text-3xl font-bold text-indigo-700 dark:text-indigo-200">{result.class}</p>
                 </div>
 
