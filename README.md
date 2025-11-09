@@ -18,6 +18,11 @@ VisionGuard is suitable for applications like:
 - Research and prototyping of image classification models
 - Educational demos and AI showcases
 - Lightweight deployment for custom image recognition tasks
+
+## Demo
+
+![VisionGuard Demo](images/demo.jpg)
+
 ## Project Structure
 ```
 VisionGuard/
